@@ -29,17 +29,17 @@ var (
 
 	arm64ArchVariantCflags = map[string][]string{
 		"armv8-a": []string{
-			"-march=armv8-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 		},
 		"armv8-a-branchprot": []string{
-			"-march=armv8-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 			"-mbranch-protection=standard",
 		},
 		"armv8-2a": []string{
-			"-march=armv8.2-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 		},
 		"armv8-2a-dotprod": []string{
-			"-march=armv8.2-a+dotprod+lse",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 		},
 		// On ARMv9 and later, Pointer Authentication Codes (PAC) are mandatory,
 		// so -fstack-protector is unnecessary.
@@ -71,12 +71,12 @@ var (
 			"-mcpu=cortex-a53",
 		},
 		"cortex-a55": []string{
-			"-mcpu=cortex-a55",
+			"-mcpu=cortex-a55+crc+crypto",
 		},
 		"cortex-a75": []string{
 			// Use the cortex-a55 since it is similar to the little
 			// core (cortex-a55) and is sensitive to ordering.
-			"-mcpu=cortex-a55",
+			"-mcpu=cortex-a55+crc+crypto",
 		},
 		"cortex-a76": []string{
 			// Use the cortex-a55 since it is similar to the little

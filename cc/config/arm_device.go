@@ -58,22 +58,22 @@ var (
 
 	armArchVariantCflags = map[string][]string{
 		"armv7-a": []string{
-			"-march=armv7-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 			"-mfloat-abi=softfp",
-			"-mfpu=vfpv3-d16",
+			"-mfpu=neon-fp-armv8",
 		},
 		"armv7-a-neon": []string{
-			"-march=armv7-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 			"-mfloat-abi=softfp",
-			"-mfpu=neon",
+			"-mfpu=neon-fp-armv8",
 		},
 		"armv8-a": []string{
-			"-march=armv8-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon-fp-armv8",
 		},
 		"armv8-2a": []string{
-			"-march=armv8.2-a",
+			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon-fp-armv8",
 		},
@@ -120,7 +120,7 @@ var (
 			"-D__ARM_FEATURE_LPAE=1",
 		},
 		"cortex-a55": []string{
-			"-mcpu=cortex-a55",
+			"-mcpu=cortex-a55+crc+crypto",
 			"-mfpu=neon-fp-armv8",
 			// Fake an ARM compiler flag as these processors support LPAE which clang
 			// don't advertise.
@@ -129,7 +129,7 @@ var (
 			"-D__ARM_FEATURE_LPAE=1",
 		},
 		"cortex-a75": []string{
-			"-mcpu=cortex-a55",
+			"-mcpu=cortex-a55+crc+crypto",
 			"-mfpu=neon-fp-armv8",
 			// Fake an ARM compiler flag as these processors support LPAE which clang
 			// don't advertise.
@@ -231,9 +231,9 @@ func init() {
 
 var (
 	armArchVariantCflagsVar = map[string]string{
-		"armv7-a":      "${config.ArmArmv7ACflags}",
-		"armv7-a-neon": "${config.ArmArmv7ANeonCflags}",
-		"armv8-a":      "${config.ArmArmv8ACflags}",
+		"armv7-a":      "${config.ArmArmv82ACflags}",
+		"armv7-a-neon": "${config.ArmArmv82ACflags}",
+		"armv8-a":      "${config.ArmArmv82ACflags}",
 		"armv8-2a":     "${config.ArmArmv82ACflags}",
 	}
 
