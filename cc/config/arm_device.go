@@ -68,12 +68,12 @@ var (
 			"-mfpu=neon-fp-armv8",
 		},
 		"armv8-a": []string{
-			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
+			"-march=armv8.2-a+crc+crypto+dotprod",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon-fp-armv8",
 		},
 		"armv8-2a": []string{
-			"-march=armv8.2-a+crc+crypto+lse+rdm+rcpc+dotprod",
+			"-march=armv8.2-a+crc+crypto+dotprod",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon-fp-armv8",
 		},
@@ -233,7 +233,7 @@ var (
 	armArchVariantCflagsVar = map[string]string{
 		"armv7-a":      "${config.ArmArmv7ACflags}",
 		"armv7-a-neon": "${config.ArmArmv7ANeonCflags}",
-		"armv8-a":      "${config.ArmArmv82ACflags}",
+		"armv8-a":      "${config.ArmArmv8ACflags}",
 		"armv8-2a":     "${config.ArmArmv82ACflags}",
 	}
 
