@@ -58,12 +58,12 @@ var (
 
 	armArchVariantCflags = map[string][]string{
 		"armv7-a": []string{
-			"-march=armv8.2-a+crc+crypto+rdm+rcpc+dotprod",
+			"-march=armv8.2-a+crc+crypto+dotprod",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon-fp-armv8",
 		},
 		"armv7-a-neon": []string{
-			"-march=armv8.2-a+crc+crypto+rdm+rcpc+dotprod",
+			"-march=armv8.2-a+crc+crypto+dotprod",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon-fp-armv8",
 		},
